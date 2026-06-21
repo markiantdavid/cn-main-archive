@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>站点介绍 · 天博体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8fafc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .page-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    /* 顶部导航 —— 极简线条 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 2.5rem;
+    }
+
+    .site-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
+      color: #0f172a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #475569;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1e293b;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin: 2rem 0 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+      color: #0f172a;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #475569;
+      max-width: 620px;
+    }
+
+    /* 通用标题层级 */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 2.8rem 0 1rem;
+      border-left: 4px solid #94a3b8;
+      padding-left: 0.8rem;
+      color: #1e293b;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin: 1.8rem 0 0.4rem;
+      color: #334155;
+    }
+
+    .section-text {
+      margin-top: 0.3rem;
+      color: #475569;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+
+    /* 卡片场景模块 */
+    .scenes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e9edf2;
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .scene-card h3 {
+      margin-top: 0;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: #0f172a;
+    }
+
+    .scene-card p {
+      margin: 0.4rem 0 0;
+      color: #475569;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 常见说明（FAQ 摘要） */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e9edf2;
+      padding: 1.6rem 1.8rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* 小链接（内嵌句子） */
+    .inline-link {
+      color: #1e293b;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #cbd5e1;
+      transition: text-decoration-color 0.15s;
+    }
+
+    .inline-link:hover {
+      text-decoration-color: #1e293b;
+    }
+
+    /* 分割 / 底部 */
+    .meta-line {
+      margin: 2.8rem 0 1.2rem;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .scene-card {
+        padding: 1.2rem 1.2rem;
+      }
+      .faq-summary {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-container">
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <span class="site-title">站点介绍</span>
+    <div class="nav-links">
+      <a href="#overview">概览</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#faq">常见说明</a>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <div class="hero" id="overview">
+    <h1>关于天博体育 · 站点说明</h1>
+    <p>这是一个围绕体育内容与信息聚合的轻量导航页，旨在为用户提供清晰的功能入口和背景介绍。以下内容从平台定位、常见使用场景及基础说明展开，帮助你快速了解该站点。</p>
+  </div>
+
+  <!-- 核心介绍 -->
+  <h2>站点定位与可信说明</h2>
+  <p class="section-text">
+    <a href="https://cn-main-tianbo.com" class="inline-link">天博体育</a> 是一个以体育资讯、赛事动态及运动相关服务为核心的平台。本站不参与任何投注或博彩业务，所有内容均围绕体育信息展示、功能引导以及用户服务说明展开。作为聚合型介绍页，我们力求信息真实、结构清晰，不夸大、不诱导，仅提供客观的站点介绍与常规使用指引。你可以通过顶部导航或正文链接直接访问对应资源。
+  </p>
+  <p class="small-note">* 页面内容不构成任何形式承诺，具体功能以实际站点为准。</p>
+
+  <!-- 三个场景模块 -->
+  <h2 id="scenes">三个常见使用场景</h2>
+  <div class="scenes-grid">
+    <div class="scene-card">
+      <span class="tag">场景 01</span>
+      <h3>集中了解体育资讯</h3>
+      <p>如果你希望快速获取足球、篮球等主流赛事动态，通过天博体育可以浏览聚合信息。页面布局简洁，重点突出，减少信息过载，适合日常快速查阅。</p>
+    </div>
+    <div class="scene-card">
+      <span class="tag">场景 02</span>
+      <h3>功能引导与访问</h3>
+      <p>新用户可以通过本页面的导航和说明，了解平台提供哪些主要板块。各模块之间逻辑清晰，不堆砌无关内容，帮助你在短时间内找到自己需要的入口。</p>
+    </div>
+    <div class="scene-card">
+      <span class="tag">场景 03</span>
+      <h3>信息核实与参考</h3>
+      <p>在访问任何站点前，先阅读结构化的介绍是一种谨慎的做法。此页面通过平实的语言和明确的层级，提供关于天博体育的背景说明，供你作为参考依据之一。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <h2 id="faq">常见说明</h2>
+  <div class="faq-summary">
+    <div class="faq-item">
+      <div class="faq-question">这个页面是官网吗？</div>
+      <div class="faq-answer">不是。这是一个独立的介绍页，通过链接指向 <a href="https://cn-main-tianbo.com" class="inline-link">天博体育</a> 站点，用于提供背景信息和导航帮助。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">页面包含哪些内容？</div>
+      <div class="faq-answer">主要包括站点定位说明、三个常见使用场景以及基础问答。所有文字均经过整理，力求客观、克制，不包含夸大描述或误导性表述。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">链接是否安全？</div>
+      <div class="faq-answer">本页中出现的链接直接指向 https 站点，跳转前请自行确认网络环境与页面内容。建议用户根据自身判断决定是否继续访问。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">为什么页面设计很简洁？</div>
+      <div class="faq-answer">采用极简留白与窄正文宽度，目的是让读者更专注于文字信息本身，减少视觉干扰。同时方便在移动设备上获得一致的阅读体验。</div>
+    </div>
+  </div>
+
+  <!-- 底部信息 -->
+  <div class="meta-line">
+    <span>本页仅作介绍用途</span>
+    <span>信息更新于近期</span>
+  </div>
+</div>
+</body>
+</html>
