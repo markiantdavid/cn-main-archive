@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>满冠体育 – 运动项目深度整合平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+    }
+
+    body {
+      background: #f6fafc;
+      color: #1d2b36;
+      line-height: 1.6;
+      padding: 0 16px;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #d7ecee 0%, #b3d6db 100%);
+      border-radius: 36px;
+      padding: 48px 28px 44px;
+      margin-bottom: 36px;
+      box-shadow: 0 8px 16px rgba(31, 79, 86, 0.08);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0b404a;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 560px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+      color: #1c4b55;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 500;
+      color: #13555f;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    /* 网格卡片 (优势区 + 说明区融合) */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 12px rgba(0, 40, 50, 0.04);
+      border: 1px solid #d3e6ea;
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #9cc5cc;
+      box-shadow: 0 10px 20px -6px rgba(26, 80, 90, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #106571;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h3::before {
+      content: "▹";
+      color: #3c9aa8;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #2e4a52;
+      font-size: 0.95rem;
+    }
+
+    .card .highlight {
+      color: #1c7482;
+      font-weight: 500;
+    }
+
+    /* 双栏说明区变体 */
+    .insight-area {
+      background: #e5f1f4;
+      border-radius: 28px;
+      padding: 32px 28px;
+      margin: 20px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    .insight-text {
+      flex: 2 1 260px;
+    }
+
+    .insight-text h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0a434e;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .insight-text p {
+      color: #1d4d58;
+      margin-bottom: 12px;
+    }
+
+    .insight-pull {
+      flex: 1 1 160px;
+      background: #c7e0e5;
+      border-radius: 20px;
+      padding: 20px 18px;
+      align-self: center;
+      text-align: center;
+    }
+
+    .insight-pull span {
+      font-size: 1rem;
+      color: #01333e;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .insight-pull small {
+      font-size: 0.85rem;
+      color: #225d69;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px;
+      margin: 24px 0 28px;
+      border: 1px solid #daeef2;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #0f4d58;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #b7d9df;
+    }
+
+    .faq-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #e5f0f3;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item q {
+      font-weight: 500;
+      color: #03313b;
+      display: block;
+      margin-bottom: 4px;
+      font-style: normal;
+    }
+
+    .faq-item p {
+      color: #2e5a64;
+      font-size: 0.93rem;
+      padding-left: 12px;
+      border-left: 3px solid #83bcc8;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid #cfe3e8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-links p {
+      color: #2b595f;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      color: #136d7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #3f97a5;
+    }
+
+    .meta-note {
+      color: #51828b;
+      font-size: 0.85rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .insight-area {
+        flex-direction: column;
+        padding: 24px 20px;
+      }
+      .insight-pull {
+        align-self: stretch;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- hero 区 -->
+  <div class="hero">
+    <h1>满冠体育 · 运动故事的另一面</h1>
+    <p>不是每个平台都需要嘶喊。这里只把赛事、训练、场地与社区梳理成安静的网格，供你慢慢翻阅。</p>
+    <div class="tagline">⛹️ 篮球 · 足球 · 羽毛球 · 游泳 · 体能</div>
+  </div>
+
+  <!-- 优势区 + 说明区 融合为网格卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>项目卡片式梳理</h3>
+      <p>告别冗长列表。每个运动类别独立成块，规则、看点、入门提示都在一张卡片里。你甚至能快速对比不同项目的强度与节奏。</p>
+    </div>
+    <div class="card">
+      <h3>本地化场景标签</h3>
+      <p>从社区球场到城市绿道，<span class="highlight">满冠体育</span> 收录真实可用的运动角落，并按距离、时段、设施条件做轻量归类。</p>
+    </div>
+    <div class="card">
+      <h3>叙事而非数据堆砌</h3>
+      <p>我们更在意一项运动怎么进入你的生活：一段描述、一句体验者的原话、一个下午的光线变化。</p>
+    </div>
+    <div class="card">
+      <h3>轻订阅 · 慢更新</h3>
+      <p>没有推送轰炸。内容按周整理，更像一份运动笔记。你可以在任何碎片时间打开，找到一点想动的念头。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 (变体双栏) -->
+  <div class="insight-area">
+    <div class="insight-text">
+      <h2>为什么是“满冠”？</h2>
+      <p>名字源于一次球场上的闲聊——有人问“什么算满贯”，年长的球友说：<em>“能把一项运动从头到尾认真体验一遍，就是满冠。”</em></p>
+      <p>这个定义很朴素，但真做到的人不多。所以我们想做一个不太着急的角落，把运动拆解成可感知的片段：一场雨后的比赛、一条跑道的树影、一段拉伸时的喘息。</p>
+      <p>内容的主力来自普通参与者，编辑只做筛选和整理。不需要专业术语，不需要滤镜过度的照片。</p>
+    </div>
+    <div class="insight-pull">
+      <span>🧭 场景示例</span>
+      <small>周末的公园篮球场 · 晚间游泳池 · 企业联赛 · 亲子体能课</small>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 (克制两三个) -->
+  <div class="faq-summary">
+    <h2>常见思路 · 简短问答</h2>
+    <div class="faq-item">
+      <q>在满冠能找到具体的训练计划吗？</q>
+      <p>不直接提供定制计划，但会汇总不同水平阶段的参考模板，以及资深爱好者的经验笔记。你可以按自己的节奏组合。</p>
+    </div>
+    <div class="faq-item">
+      <q>内容会偏向竞技还是休闲？</q>
+      <p>两者都涉及，但叙述比例上更侧重“普通人如何接近一项运动”。竞技部分只保留值得了解的背景与赛例。</p>
+    </div>
+    <div class="faq-item">
+      <q>信息多久更新一次？</q>
+      <p>每周整合一次新内容，偶尔有专题整理。没有日更压力，所以每条信息都会经过核实与重新表述。</p>
+    </div>
+  </div>
+
+  <!-- 底部链接与嵌入句子 -->
+  <div class="footer-links">
+    <p>
+      如果你想看看更完整的项目库与社区记录，可以直接访问 
+      <a href="https://cns-manguansports.com">满冠体育</a>。
+      那里有按运动分类的详细介绍和活动线索。
+    </p>
+    <span class="meta-note">© 2025 · 内容持续整合中</span>
+  </div>
+</div>
+</body>
+</html>
